@@ -155,7 +155,7 @@ const Footer = () => {
                 <FooterList>
                   <FooterListItem><NavLink to="/terms">Terms of Us</NavLink></FooterListItem>
                   <FooterListItem><NavLink to="/disclaimer">Disclaimer</NavLink></FooterListItem>
-                  <FooterListItem><NavLink to="/">QR Security</NavLink></FooterListItem>
+                  <FooterListItem><NavLink to="/security">QR Security</NavLink></FooterListItem>
                 </FooterList>
               </FooterBiggerBox>
               <FooterBiggerBox>

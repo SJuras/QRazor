@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { FaChevronLeft } from "react-icons/fa";
 
 
 const PageContainer = styled.div`
@@ -24,6 +26,30 @@ const PageInnerP = styled.p`
   margin-bottom: 24px;
 `
 
+const BtnContainer = styled.div`
+  padding: 42px 0px 30px;
+`
+
+const Btn = styled(Link)`
+  width: 150px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  /* margin: 0 10px; */
+  padding: 12px 0;
+  background-color: #ff4000;
+  color: #fff;
+  border: 0.5px solid #ff4000;
+  position: relative;
+  z-index: 1;
+  transition: 0.5s;
+  cursor: pointer;
+  &:hover {
+    background-color: #4f78de;
+    border-color: #4f78de;
+  }
+`
+
 
 function PageContent(props){
   return(
@@ -43,6 +69,9 @@ function PageContent(props){
           <PageInnerP>{props.para9}</PageInnerP>
           <PageInnerH2>{props.title3}</PageInnerH2>
           <PageInnerP>{props.para10}</PageInnerP>
+          <BtnContainer>
+            <Btn to='/'><FaChevronLeft style={{marginBottom: "-3px", marginRight: "6px"}} />Back</Btn>
+          </BtnContainer>
         </PageInner>
       </Container>
     </PageContainer>
