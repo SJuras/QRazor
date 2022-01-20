@@ -9,13 +9,13 @@ import Footer from '../components/Footer.jsx';
 
 const Home = () => {
   return(
-    <>
+    <div>
       <HomeHero />
       <About />
       <Ideas />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }
 

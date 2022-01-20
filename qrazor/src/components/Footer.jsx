@@ -153,7 +153,7 @@ const Footer = () => {
               <FooterBiggerBox>
                 <BiggerBoxTitle>Legal</BiggerBoxTitle>
                 <FooterList>
-                  <FooterListItem><NavLink to="/terms">Terms of Us</NavLink></FooterListItem>
+                  <FooterListItem><NavLink to="/terms">Terms of Use</NavLink></FooterListItem>
                   <FooterListItem><NavLink to="/disclaimer">Disclaimer</NavLink></FooterListItem>
                   <FooterListItem><NavLink to="/security">QR Security</NavLink></FooterListItem>
                 </FooterList>
