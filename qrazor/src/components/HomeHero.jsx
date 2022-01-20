@@ -12,6 +12,7 @@ const HeroSection = styled.section`
   background-image: url(${BackgroundImg});
   background-position: center;
   background-size: cover;
+  position: relative;
 `
 
 const ContainerTwo = styled.div`

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 
+import Navbar from '../components/Navbar.jsx';
 import PageHero from '../components/PageHero.jsx';
 import PageContent from '../components/PageContent.jsx';
 import Footer from '../components/Footer.jsx';
@@ -9,6 +10,7 @@ import Footer from '../components/Footer.jsx';
 const Terms = () => {
   return(
     <>
+      <Navbar />
       <PageHero
         title="TERMS OF USE"
        />
