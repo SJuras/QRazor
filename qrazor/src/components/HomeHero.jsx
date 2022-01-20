@@ -96,6 +96,26 @@ const QRImage = styled.img`
   height: 100%;
 `
 
+const GenerateButton = styled.button`
+  width: 250px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 24px;
+  padding: 12px 0;
+  background-color: #ff4000;
+  color: #fff;
+  font-size: 18px;
+  border: 0.5px solid #ff4000;
+  position: relative;
+  z-index: 1;
+  transition: 0.5s;
+  cursor: pointer;
+  &:hover {
+    background-color: #4f78de;
+    border-color: #4f78de;
+`
+
 
 const HomeHero = () => {
 
@@ -117,7 +137,7 @@ const HomeHero = () => {
           <Generator>
             <GeneratorLeft>
               <GeneratorLeftTextArea placeholder="Enter link or text here... " onChange={(e) => setText(e.target.value)}></GeneratorLeftTextArea>
-              <button onClick={() => generateQrCode()}>GENERATE QR</button>
+              <GenerateButton onClick={() => generateQrCode()}>GENERATE QR</GenerateButton>
             </GeneratorLeft>
             <GeneratorRight>
               <QRImageContainer>
