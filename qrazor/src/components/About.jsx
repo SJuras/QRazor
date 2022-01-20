@@ -180,7 +180,7 @@ const About = () => {
               Simple,<br />
               1. Copy and paste your link or text to area marked as "Enter Link or Text".<br />
               2. Click GENERATE QR button to get your QR code.<br />
-              3. Download your QR code by clicking DOWNLOAD QR button and use it.
+              3. Left-Click or tap the QR code image to download your QR code.
             </HalfP>
             <HalfP>
               Explore more creative ideas on how you can benefit with QR code.

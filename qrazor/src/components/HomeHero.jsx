@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import QRCode from 'qrcode';
 
 import BackgroundImg from '../assets/pageHeroBg2.png';
 
@@ -45,6 +46,32 @@ const Generator = styled.div`
   box-shadow: 0px 6px 12px rgba(0,0,0,0.4);
 `
 
+const GeneratorLeft = styled.div`
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`
+
+const GeneratorRight = styled.div`
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`
+
+const GeneratorLeftTextArea = styled.textarea`
+  width: 80%;
+  height: 200px;
+  resize: none;
+  padding: 18px;
+  font-size: 18px;
+`
+
 const ScrollDownContainer = styled.div`
   width: 100%;
   position: absolute;
@@ -58,13 +85,48 @@ const ScrollDownContainerPara = styled.p`
 
 `
 
+const QRImageContainer = styled.div`
+  width: 80%;
+  height: auto;
+  background-color: #fff;
+`
+
+const QRImage = styled.img`
+  width: 100%;
+  height: 100%;
+`
+
 
 const HomeHero = () => {
+
+  const [text, setText] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const generateQrCode = async () => {
+    try {
+      const response = await QRCode.toDataURL(text);
+      setImageUrl(response);
+    } catch(error){
+      console.log(error);
+    }
+  }
+
   return(
     <HeroSection>
       <ContainerTwo>
         <HeroInner>
-          <Generator></Generator>
+          <Generator>
+            <GeneratorLeft>
+              <GeneratorLeftTextArea placeholder="Enter link or text here... " onChange={(e) => setText(e.target.value)}></GeneratorLeftTextArea>
+              <button onClick={() => generateQrCode()}>GENERATE QR</button>
+            </GeneratorLeft>
+            <GeneratorRight>
+              <QRImageContainer>
+                {
+                  imageUrl ? (<a href={imageUrl} download><QRImage src={imageUrl} alt="qr image" /></a>) : null
+                }
+              </QRImageContainer>
+            </GeneratorRight>
+          </Generator>
           <ScrollDownContainer>
             <ScrollDownContainerPara>Scroll down to learn more</ScrollDownContainerPara>
             <FaChevronDown />

@@ -15,10 +15,18 @@ const Nav = styled.div`
   left: 0;
   width: 100%;
   z-index: 1000;
+  border-bottom: 1px solid #ebeef2;
 `
 
 const NavLink = styled(Link)`
-
+  text-decoration: none;
+  
+  h2 {
+    font-size: 36px;
+    color: #000;
+    font-family: 'Moonhouse', sans-serif;
+    margin-bottom: 6px;
+  }
 `
 
 const Hamburger = styled.div`
@@ -71,7 +79,9 @@ const Navbar = () => {
 
   return(
     <Nav>
-      <Link to="/">QRazor</Link>
+      <NavLink to="/">
+        <h2>QRazor</h2>
+      </NavLink>
       <Hamburger onClick={() => setIsOpen(!isOpen)}>
         <span />
         <span />
